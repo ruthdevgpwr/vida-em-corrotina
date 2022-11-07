@@ -1,16 +1,36 @@
 import { Container, Box } from '@mui/system';
+import { useEffect, useState } from 'react';
 import { Header } from './components/Header';
+import axios from 'axios';
 import { Post } from './components/Post';
 
+const baseURL = 'https://vidaemcorrotina-api.herokuapp.com/posts';
+
 function App() {
+  
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get(baseURL)
+      .then(response => {
+        setPosts(response.data);
+      }).catch(error => {
+        alert(error);
+      });
+  }, []);
+
   return (
-    <Container className='containerPRINCIPAL'sx={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'center', height: '100vh'}}>
+    <Container>
       <Header />
-      <Box className='box DOCARAI' sx={{display: 'flex', flexWrap: 'wrap', position: 'relative', top: '115px'}}>
-        <Post />
-        <Post />
-        <Post />
-      </Box>
+      {
+        posts.length > 0 && posts.map(post => {
+          return  (
+            <Post key={post.id} title={post.title}/>
+          );
+        })
+      };
+
+      
     </Container>
   );
 }
