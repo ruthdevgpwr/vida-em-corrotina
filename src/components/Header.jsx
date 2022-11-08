@@ -8,11 +8,11 @@ import { ListItemText, MenuItem, MenuList } from '@mui/material';
 export function Header() {
   return (
     <Box>
-      <AppBar sx={{backgroundColor: '#2c3357'}}>
+      <AppBar sx={{backgroundColor: '#131215'}}>
         <Toolbar sx={{display: 'flex', justifyContent: 'space-around', height: '6rem'}}>
-          <Box sx={{display: 'flex', flexDirection: 'row', background: '#15a4e3', borderRadius: '0.4rem', padding: '0.5rem'}}>
-            <GroupOutlinedIcon/>
-            <Typography>vida em corrotina</Typography>
+          <Box sx={{display: 'flex', flexDirection: 'row', borderRadius: '0.4rem', padding: '0.5rem'}}>
+            <GroupOutlinedIcon sx={{color: '#8257e6'}}/>
+            <Typography component='span'>vida em corrotina</Typography>
           </Box>
           <MenuList sx={{display: 'flex', flexDirection: 'row'}}>
             <MenuItem>
@@ -27,3 +27,5 @@ export function Header() {
     </Box>
   );
 }
+
+

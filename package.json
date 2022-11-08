@@ -14,8 +14,14 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "axios": "^1.1.3",
+    "date-fns": "^2.29.3",
+    "date-fns-tz": "^1.3.7",
+    "locale": "^0.1.0",
+    "locales": "^0.0.2",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",

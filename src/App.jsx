@@ -4,7 +4,6 @@ import { Header } from './components/Header';
 import { Post } from './components/Post';
 import axios from 'axios';
 import './global.css';
-import { Footer } from './components/Footer';
 
 const baseURL = 'https://vidaemcorrotina-api.herokuapp.com/posts';
 
@@ -28,11 +27,16 @@ function App() {
       {
         posts.length > 0 && posts.map(post => {
           return  (
-            <Post key={post.id} title={post.title} text={post.text}/>
+            <Post 
+              key={post.id} 
+              title={post.title} 
+              text={post.text} 
+              author={post.author}
+              createdAt={post.createdAt}
+            />
           );
         })
       }
-      <Footer />
     </Container>
   );
 }
