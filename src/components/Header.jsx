@@ -7,14 +7,14 @@ import { ListItemText, MenuItem, MenuList } from '@mui/material';
 
 export function Header() {
   return (
-    <>
-      <AppBar>
-        <Toolbar>
-          <Box>
+    <Box>
+      <AppBar sx={{backgroundColor: '#2c3357'}}>
+        <Toolbar sx={{display: 'flex', justifyContent: 'space-around', height: '6rem'}}>
+          <Box sx={{display: 'flex', flexDirection: 'row', background: '#15a4e3', borderRadius: '0.4rem', padding: '0.5rem'}}>
             <GroupOutlinedIcon/>
             <Typography>vida em corrotina</Typography>
           </Box>
-          <MenuList>
+          <MenuList sx={{display: 'flex', flexDirection: 'row'}}>
             <MenuItem>
               <ListItemText>Sobre nós</ListItemText>
             </MenuItem>
@@ -24,6 +24,6 @@ export function Header() {
           </MenuList>
         </Toolbar>
       </AppBar>
-    </>
+    </Box>
   );
 }

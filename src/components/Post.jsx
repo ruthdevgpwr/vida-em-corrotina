@@ -1,16 +1,16 @@
 import { Box, Paper, Typography } from '@mui/material';
 
-export function Post({title}) {
+export function Post({title, text}) {
 
   return (
-    <Box>
-      <Paper sx={{padding: '20px', backgroundColor: '#29292e', color: '#fff'}}>
-        <Typography sx={{color: '#52a1ed'}}>{title}</Typography>
-        <time  dateTime='2022-11-06 06:00:00'>Publicado há 1 hora</time>
-        <Typography>TEXTOOOOOO</Typography>
-        <Typography sx={{backgroundColor: '#0f3f6f', position: 'absolute', borderRadius: '0.1rem'}}>Ruth</Typography>
+    <>
+      <Paper sx={{backgroundColor: 'var(--gray-700)', padding: '0.5rem', height: 'auto', width: '72rem', color: '#C6CEF4', minHeight: '12rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
+        <Typography>{title}</Typography>
+        <time dateTime='2022-11-06 06:00:00'>Publicado há 1 hora</time>
+        <Typography>{text}</Typography>
+        <Typography>Ruth</Typography>
       </Paper>
-    </Box>
+    </>
   );
 }
 

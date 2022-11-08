@@ -1,8 +1,10 @@
-import { Container, Box } from '@mui/system';
+import { Container } from '@mui/system';
 import { useEffect, useState } from 'react';
 import { Header } from './components/Header';
-import axios from 'axios';
 import { Post } from './components/Post';
+import axios from 'axios';
+import './global.css';
+import { Footer } from './components/Footer';
 
 const baseURL = 'https://vidaemcorrotina-api.herokuapp.com/posts';
 
@@ -20,17 +22,17 @@ function App() {
   }, []);
 
   return (
-    <Container>
+
+    <Container sx={{padding: '2rem', display: 'grid', position: 'relative', top: '5rem', gridTemplateColumns: '1fr', griddTemplateRows: '1fr', gap: '1rem'}} className='wrapper'>
       <Header />
       {
         posts.length > 0 && posts.map(post => {
           return  (
-            <Post key={post.id} title={post.title}/>
+            <Post key={post.id} title={post.title} text={post.text}/>
           );
         })
-      };
-
-      
+      }
+      <Footer />
     </Container>
   );
 }
