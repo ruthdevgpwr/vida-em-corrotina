@@ -21,26 +21,25 @@
   box-shadow: 0 0 0 2px var(--blue-100);
 }
 
-#root {
-  max-height: 100%;
-  max-width: 100%;
-}
-
 *, .wrapper {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  vertical-align:baseline;
+  list-style:none;
+  border:0;
 }
 
 body {
   background: #131215;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 body,
 input,
 textarea,
-Button {
+{
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1rem;

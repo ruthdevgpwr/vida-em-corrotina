@@ -25,7 +25,7 @@ export function Post({title, text, author, createdAt}) {
    
   return (
     <>
-      <Paper sx={{backgroundColor: 'var(--gray-700)', padding: '0.5rem', height: 'auto', width: '72rem', color: '#e1e1e6', minHeight: '12rem', display: 'flex', flexDirection: 'column'}}>
+      <Paper sx={{backgroundColor: '#202024', padding: '0.5rem', height: 'auto', width: '72rem', color: '#e1e1e6', minHeight: '12rem', display: 'flex', flexDirection: 'column'}}>
         <Typography component='h1' sx={{fontSize:' 2rem', marginBottom: '-0.4rem'}}>{title}</Typography>
         <Typography component="time" sx={{marginLeft: '.2rem', fontSize: '0.8rem', fontWeight: 'lighter'}}>Publicado há {dateTextTemp}</Typography>
         <Typography sx={{marginLeft: '.2rem', fontSize: '1.2rem'}}>{text}</Typography>

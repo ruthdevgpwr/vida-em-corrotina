@@ -1,44 +1,18 @@
-import { Container } from '@mui/system';
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
 import { Header } from './components/Header';
-import { Post } from './components/Post';
-import axios from 'axios';
+import { NovaPostagem } from './pages/NovaPostagem';
 import './global.css';
 
-const baseURL = 'https://vidaemcorrotina-api.herokuapp.com/posts';
-
-function App() {
-  
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios.get(baseURL)
-      .then(response => {
-        setPosts(response.data);
-      }).catch(error => {
-        alert(error);
-      });
-  }, []);
-
+export function App() {
   return (
-
-    <Container sx={{padding: '2rem', display: 'grid', position: 'relative', top: '5rem', gridTemplateColumns: '1fr', griddTemplateRows: '1fr', gap: '1rem'}} className='wrapper'>
+    <BrowserRouter>
       <Header />
-      {
-        posts.length > 0 && posts.map(post => {
-          return  (
-            <Post 
-              key={post.id} 
-              title={post.title} 
-              text={post.text} 
-              author={post.author}
-              createdAt={post.createdAt}
-            />
-          );
-        })
-      }
-    </Container>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="novapostagem" element={<NovaPostagem />} />
+        <Route path="*" element={<p>PÁGINA NÃO ENCONTRADA</p>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
